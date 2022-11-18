@@ -3,14 +3,16 @@ import styles from './shopping.module.scss';
 import TableCart from '../Table/TableCart';
 import { useSelector } from "react-redux";
 import Button from 'Components/Button/Button';
+import { useAppSelector } from 'hooks/redux-hooks';
 
 
 const ShoppingCart:React.FC = () => {
-  const total = useSelector((state:any) => state.orderCreator.totalPrice);
+  const total = useAppSelector((state:any) => state.orderCreator.totalPrice);
 
     return (
       <>
-  {  total ? <div>
+  {  total ?
+  <div>
     <TableCart />
 
 <div className={styles.total}>
